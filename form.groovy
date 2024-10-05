@@ -7,7 +7,9 @@ pipelineJob('job-dsl-plugin') {
             groovyScript {
                 script('["choice1", "choice2"]')
             }
-            fallbackScript('["fallback choice"]')
+            fallbackScript {
+                script('["fallback choice"]')
+            }
         }
     }
     
