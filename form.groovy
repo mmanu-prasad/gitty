@@ -1,49 +1,20 @@
-pipelineJob('Formy-Job') {
- parameters {
-        activeChoiceParam('States') {
-            description('Select a state option')
-            filterable()
-            choiceType('SINGLE_SELECT')
-            groovyScript {
-                script('["Sao Paulo", "Rio de Janeiro", "Parana:selected", "Acre"]')
-                fallbackScript('return ["ERROR"]')
-            }
-        }
-        activeChoiceReactiveParam('Cities') {
-            description('Active Choices Reactive parameter')
-            filterable()
-            choiceType('CHECKBOX')
-            groovyScript {
-                script('''
-if (States.equals('Sao Paulo')) {
-	return ['Barretos', 'Sao Paulo', 'Itu'];
-} else if (States.equals('Rio de Janeiro')) {
-	return ['Rio de Janeiro', 'Mangaratiba']
-} else if (States.equals('Parana')) {
-	return ['Curitiba', 'Ponta Grossa']
-} else if (States.equals('Acre')) {
-	return ['Rio Branco', 'Acrelandia']
-} else {
-	return ['Unknown state']
+job('demo') {
+    steps {
+        shell('echo Hello World!')
+    }
 }
-                       ''')
-                fallbackScript('return ["Script error!"]')
+
+pipelineJob('github-demo') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        github('https://github.com/mmanu-prasad/gitty.git')
+                    }
+                }
             }
-            referencedParameter('States')
+            scriptPath('Jenkinsfile')
         }
     }
-  definition {
-    cpsScm {
-      scm {
-        git {
-          remote {
-            url('https://github.com/mmanu-prasad/gitty.git')
-          }
-          branch('*/main')
-        }
-        scriptPath('Jenkinsfile')
-      }
-      lightweight()
-    }
-  }
 }
