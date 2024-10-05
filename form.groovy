@@ -1,4 +1,18 @@
-pipelineJob('job-dsl-plugin') {
+pipelineJob('Formy-Job') {
+
+    listView('project-A') {
+    columns {
+        status()
+        weather()
+        name()
+        lastSuccess()
+        lastFailure()
+        lastDuration()
+        buildButton()
+    }
+}
+
+
   definition {
     cpsScm {
       scm {
