@@ -9,7 +9,7 @@ pipelineJob('Formy-Job') {
                 fallbackScript('"fallback choice"')
             }
  }
-
+ }
  
   definition {
     cpsScm {
