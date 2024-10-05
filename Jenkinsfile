@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 script{
-                    sh "$env:CHOICE-1"
+                    sh "echo ${CHOICE-1}"
                 }
             }
         }
