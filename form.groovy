@@ -11,7 +11,7 @@ pipelineJob('Formy-Job') {
               }
 
 } 
- 
+} 
   definition {
     cpsScm {
       scm {
