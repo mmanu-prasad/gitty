@@ -41,6 +41,7 @@ if (States.equals('Sao Paulo')) {
           }
           branch('*/main')
         }
+        scriptPath('Jenkinsfile')
       }
       lightweight()
     }
