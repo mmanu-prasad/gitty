@@ -4,12 +4,13 @@ pipelineJob('Formy-Job') {
             description('Allows user choose from multiple choices')
             filterable()
             choiceType('SINGLE_SELECT')
-            groovyScript {
-                script('["choice1", "choice2"]')
-                fallbackScript('"fallback choice"')
-            }
- }
- }
+              groovyScript {
+        
+                        fallbackScript(String fallbackScript)
+                        script(String script)
+              }
+
+} 
  
   definition {
     cpsScm {
