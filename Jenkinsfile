@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 script{
-                    sh "echo  ${params['CHOICE-1']}"           
+                    sh "echo  ${params['BRANCH_NAME']}"           
                  }
             }
         }
