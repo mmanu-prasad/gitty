@@ -10,7 +10,6 @@ pipelineJob('job-dsl-plugin') {
             }
         }
     }
-    
     definition {
         cpsScm {
             scm {
