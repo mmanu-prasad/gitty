@@ -1,12 +1,12 @@
 pipelineJob('job-dsl-plugin') {
     parameters {
-        activeChoiceParam('CHOICE-1') {
-            description('Allows user to choose from multiple choices')
+        activeChoiceParam('BRANCH_NAME') {
+            description('Choose the branch to build')
             filterable()
             choiceType('SINGLE_SELECT')
             groovyScript {
-                script('["choice1", "choice2"]')
-                fallbackScript('"fallback choice"')
+                script('["main", "dev"]')
+                fallbackScript('"main"')
             }
         }
     }
