@@ -17,7 +17,7 @@ pipelineJob('job-dsl-plugin') {
                     remote {
                         url('https://github.com/mmanu-prasad/gitty.git')
                     }
-                    branches('*/${env.BRANCH_NAME}')
+                    branches('*/${BRANCH_NAME}')
                 }
                 scriptPath('Jenkinsfile')
             }
