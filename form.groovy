@@ -1,4 +1,4 @@
-pipelineJob('job-dsl-plugin') {
+job('job-dsl-plugin') {
     parameters {
         activeChoiceParam('BRANCH_NAME') {
             description('Choose the branch to build')
